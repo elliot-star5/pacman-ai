@@ -18,18 +18,6 @@
 #include "include/LTexture.h"       /* texture loading */
 #include "include/LTimer.h"         /* timer */
 
-// current window instance
-struct LWindow gWindow = _LWindow;
-
-// font texture 
-TTF_Font *gFont = NULL;
-
-// renderer for rendering texture
-SDL_Renderer* gRenderer = NULL;
-
-// texture from image 
-struct LTexture gSceneTexture = _LTexture;
-
 
 
 // initialize SDL 
