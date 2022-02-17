@@ -1,14 +1,5 @@
-#include "global.h"
 #ifndef __LTexture_H_
 #define __LTexture_H_
-
-#define _LTexture { \
-  .mTexture = NULL, \
-  .mWidth = 0,      \
-  .mHeight = 0,     \
-  .mPixels = NULL,  \
-  .mPitch = 0,       \
-  }
 
 
 /* 

@@ -14,7 +14,8 @@ extern const int SCREEN_FPS;
 extern TTF_Font *gFont;
 extern SDL_Renderer *gRenderer;
 extern struct LWindow gWindow;
-extern struct Player mainPlayer;
+extern struct LTexture gSceneTexture;
 
+extern struct Player gPlayer;
 
 #endif

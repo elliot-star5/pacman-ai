@@ -1,5 +1,3 @@
-
-#include "global.h"
 #ifndef __LTimer_H_
 
 #define __LTimer_H_

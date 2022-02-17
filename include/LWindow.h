@@ -1,6 +1,4 @@
 
-#include "global.h"
-
 #ifndef __LWindow_H_
 #define __LWindow_H_
 
