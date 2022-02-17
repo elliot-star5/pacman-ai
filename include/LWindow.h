@@ -3,14 +3,14 @@
 #define __LWindow_H_
 
 // Window initialization defination
-#define _LWindow { \
-  .mWindow = NULL, \
-  .mWidth = 0,     \
-  .mHeight = 0,    \
-  .mMouseFocus = false,\
-  .mKeyboardFocus = false,\
-  .mFullScreen = false,\
-  .mMinimized = false, \
+#define _LWindow {            \
+  .mWindow = NULL,            \
+  .mWidth = SCREEN_WIDTH,     \
+  .mHeight = SCREEN_HEIGHT,   \
+  .mMouseFocus = false,       \
+  .mKeyboardFocus = false,    \
+  .mFullScreen = false,       \
+  .mMinimized = false,        \
 } 
 
 // Window wrapper struct

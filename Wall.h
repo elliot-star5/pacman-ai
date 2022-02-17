@@ -1,7 +1,7 @@
 #define TILE_WIDTH
 #define TILE_HEIGHT
 
-struct Tile
+struct wall
 {
   // The attribute of the tile
   SDL_Rect mBox;
@@ -12,7 +12,7 @@ struct Tile
 
 // Initilize position and type of a tile
 void 
-init_tile(struct Tile *self, int x, int y, int tileType)
+init_tile(struct wall *self, int x, int y, int tileType)
 {
   // Get the offsets
   self->mBox.x = x;
@@ -28,23 +28,23 @@ init_tile(struct Tile *self, int x, int y, int tileType)
 
 
 // Renders tile on renderer
-void tile_render(struct Tile* self, struct LTexture *fTexture, SDL_Rect *camera)
+void wall_render(struct wall* self, struct LTexture *fTexture, SDL_Rect *camera)
 {
   if (checkCollision(camera, &self->mBox))
   {
     // Show the tile
-    ltexture_render(fTexture, self->mBox.x - camera->x, self->mBox.y - camera->y, &self->gTileClips[self->mType], NULL, 0.0, NULL, SDL_FLIP_NONE);
+    ltexture_render(fTexture, self->mBox.x - camera->x, self->mBox.y - camera->y, &self->gwallClips[self->mType], NULL, 0.0, NULL, SDL_FLIP_NONE);
   }
 }
 
 // returns type of the tile
-int tile_getType(struct Tile* self)
+int wall_getType(struct wall* self)
 {
   return self->mType;
 }
 
 // returns copy of the current box
-SDL_Rect tile_getBox(struct Tile *self)
+SDL_Rect wall_getBox(struct wall *self)
 {
   return self->mBox;
 }

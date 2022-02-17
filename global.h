@@ -17,5 +17,7 @@ extern struct LWindow gWindow;
 extern struct LTexture gSceneTexture;
 
 extern struct Player gPlayer;
+extern struct wall gWall;
+
 
 #endif

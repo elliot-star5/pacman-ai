@@ -20,6 +20,50 @@
 #include "Player.h"
 
 
+/*                                
+ *        ^                      ^ topB
+ *   topA |                      |  
+ *      ----------            ----------
+ *      |        |rightA      |        |
+ * leftA| box A  |--->        | box B  |---->rightB
+ *  <---|        |        <---|        |
+ *      ----------      leftB ----------
+ *         |bottomA               | bottomB
+ *         v                      v
+ *
+ *         four conditions:
+ *         bottomA <= topB then it's outside of B
+ *         topA >= bottomB then it's outside of B
+ *         rightA <= leftB then it's outside of B
+ *         leftA >= rightB then it's outside of B
+ */
+
+bool collision(const SDL_Rect* a, const SDL_Rect* b)
+{
+  // the sides of rectangle
+  int leftA, leftB;
+  int rightA, rightB;
+  int topA, topB;
+  int bottomA,  bottomB;
+
+  // if any of the side from A are outside of B
+  if (bottomA <= topB)
+    return false;
+
+  if (topA >= bottomB)
+    return false;
+
+  if (rightA <= leftB)
+    return false;
+
+  if (leftA >= rightB)
+    return false;
+
+  // if None of the sides from A are outside B
+  return true;
+}
+
+
 
 // initialize SDL 
 bool init()
