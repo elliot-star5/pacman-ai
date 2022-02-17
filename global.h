@@ -3,7 +3,7 @@
 #define __GLOBAL_H_
 
 // Game name 
-#define GAME_NAME "Notional Man"
+#define GAME_NAME "Pacman-ai"
 
 // included from some where else
 extern const int SCREEN_WIDTH;

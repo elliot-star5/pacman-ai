@@ -1,5 +1,4 @@
 #include "initrun.h"
-#include "include/global.h"
 
 
 // Screen constants
@@ -18,8 +17,10 @@ TTF_Font *gFont = NULL;
 SDL_Renderer* gRenderer = NULL;
 
 // texture from image 
-struct LTexture gSceneTexture = _LTexture;
+struct LTexture gSceneTexture = { 0 };
 
+// our game player 
+struct Player gPlayer = {0};
 
 int main(int argc, char **argv)
 {

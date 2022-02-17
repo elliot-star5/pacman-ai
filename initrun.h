@@ -129,7 +129,6 @@ void render()
 {
   // gets center of window
   int win_center = (lwindow_getWidth(&gWindow) - lwindow_getHeight(&gWindow)) / 2;
-  struct vector ivect = {40, 40};
 
   SDL_Rect rect = { 0, 0, 80, 80 };
   // Clear screen
@@ -140,7 +139,7 @@ void render()
   // Render text textures
   ltexture_render(&gSceneTexture, win_center, win_center, NULL, 0.0, NULL, SDL_FLIP_NONE);
 
-  player_setPosition(&gPlayer, (struct vector *)&ivect);
+  player_move(&gPlayer);
   player_render(&gPlayer);
 
   // Set draw color to blue
@@ -182,6 +181,9 @@ void runMainLoop()
 
       // Handle window events
       lwindow_handleEvent(&gWindow, &e);
+
+      // handle Player events
+      playerhandleEvent(&gPlayer, &e);
     }
 
    /*
