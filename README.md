@@ -1,0 +1,3 @@
+# pacman-ai 
+## This repository contains C++ implementation of pacman-ai to solve
+## maze problem with different algorithms such as DFS, BFS, A* ...
