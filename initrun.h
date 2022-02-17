@@ -37,7 +37,6 @@
  *         rightA <= leftB then it's outside of B
  *         leftA >= rightB then it's outside of B
  */
-
 bool collision(const SDL_Rect* a, const SDL_Rect* b)
 {
   // the sides of rectangle
