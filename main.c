@@ -22,17 +22,17 @@ const int SCREEN_WIDTH = 1024;
 const int SCREEN_HEIGHT = 640;
 const int SCREEN_FPS = 60;
 
-// LWindow
+
+// current window instance
 struct LWindow gWindow = _LWindow;
 
-// TTF_font
+// font texture 
 TTF_Font *gFont = NULL;
 
-// Renderer
+// renderer for rendering texture
 SDL_Renderer* gRenderer = NULL;
 
-
-// texture
+// texture from image 
 struct LTexture gSceneTexture = _LTexture;
 
 
@@ -111,7 +111,6 @@ bool loadMedia()
     ltexture_setColorKey(&gSceneTexture, 0x00, 0xff, 0xff);
   }
 
-
   return success;
 }
 
@@ -130,16 +129,8 @@ void xclose()
   SDL_Quit();
 }
 
-bool collision(SDL_Rect a, SDL_Rect b)
-{
-  
-
-}
-
-
 void render()
 {
-
   SDL_Rect rect = { 0, 0, 80, 80 };
   // Clear screen
   SDL_SetRenderDrawColor(gRenderer, 0xff, 0xff, 0xff, 0xff);
@@ -211,29 +202,3 @@ void runMainLoop()
   }
 }
 
-int main()
-{
-  // Initialize SDL ..etc
-  if (!init())
-  {
-    printf("Failed to initialize SDL\n");
-  }
-  else 
-  {
-    // Load media
-    if (!loadMedia())
-    {
-      printf("Failed to load media\n");
-    }
-    else
-    {
-      // Run application main loop
-      runMainLoop();
-    }
-  }
-
-  // deallocates stuff
-  xclose();
-
-  return 0;
-}
