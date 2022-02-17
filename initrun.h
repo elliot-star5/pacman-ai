@@ -12,11 +12,12 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 
-#include "include/global.h"
+#include "global.h"
 #include "include/LWindow.h"        /* Window Events */
 
 #include "include/LTexture.h"       /* texture loading */
 #include "include/LTimer.h"         /* timer */
+#include "Player.h"
 
 
 
@@ -95,6 +96,17 @@ bool loadMedia()
     ltexture_setColorKey(&gSceneTexture, 0x00, 0xff, 0xff);
   }
 
+  if (!player_loadTexture(&gPlayer, "assets/player.bmp"))
+  {
+    printf("Failed to load player texture\n");
+    success = false;
+  }
+  else
+  {
+    player_setColorKey(&gPlayer, 0x00, 0x00, 0x00);
+  }
+
+
   return success;
 }
 
@@ -115,6 +127,10 @@ void xclose()
 
 void render()
 {
+  // gets center of window
+  int win_center = (lwindow_getWidth(&gWindow) - lwindow_getHeight(&gWindow)) / 2;
+  struct vector ivect = {40, 40};
+
   SDL_Rect rect = { 0, 0, 80, 80 };
   // Clear screen
   SDL_SetRenderDrawColor(gRenderer, 0xff, 0xff, 0xff, 0xff);
@@ -122,9 +138,10 @@ void render()
 
 
   // Render text textures
-  ltexture_render(&gSceneTexture, (lwindow_getWidth(&gWindow) - lwindow_getHeight(&gWindow)) / 2, 
-      (lwindow_getHeight(&gWindow) - lwindow_getHeight(&gWindow)) / 2, NULL, 0.0, NULL, SDL_FLIP_NONE);
+  ltexture_render(&gSceneTexture, win_center, win_center, NULL, 0.0, NULL, SDL_FLIP_NONE);
 
+  player_setPosition(&gPlayer, (struct vector *)&ivect);
+  player_render(&gPlayer);
 
   // Set draw color to blue
   SDL_SetRenderDrawColor(gRenderer, 0, 0, 0xff, 0xff);

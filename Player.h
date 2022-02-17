@@ -22,6 +22,12 @@ bool player_loadTexture(struct Player *iplayer, char *path)
     return ltexture_loadTextureFromFile(&iplayer->playerTexture, path);
 }
 
+// set color key for the texture
+void player_setColorKey(struct Player* iplayer, Uint8 red, Uint8 green, Uint8 blue)
+{
+  ltexture_setColorKey(&iplayer->playerTexture, red, green, blue);
+}
+
 // frees player texture
 void player_freeTexture(struct Player *iplayer)
 {
@@ -42,4 +48,8 @@ void player_render(struct Player* iplayer)
     ltexture_render(&iplayer->playerTexture, iplayer->player_coord.x, iplayer->player_coord.y, NULL, 0.0, NULL, SDL_FLIP_NONE);
 }
 
+void player_handleEvent(struct Player* iplayer) 
+{
+
+}
 #endif
