@@ -1,5 +1,24 @@
-#define TILE_WIDTH
-#define TILE_HEIGHT
+#define TILE_WIDTH            80
+#define TILE_HEIGHT           80
+#define TOTAL_TILES           192
+#define TOTAL_TILE_SPRITES    12
+
+
+enum {
+  TILE_RED,
+  TILE_GREEN,
+  TILE_BLUE,
+  TILE_CENTER,
+  TILE_TOP,
+  TILE_TOPRIGHT,
+  TILE_RIGHT,
+  TILE_BOTTOMRIGHT,
+  TILE_BOTTOM,
+  TILE_BOTTOMLEFT,
+  TILE_LEFT,
+  TILE_TOPLEFT
+
+} TILE_TYPE;
 
 struct wall
 {
@@ -7,8 +26,10 @@ struct wall
   SDL_Rect mBox;
 
   // the tile type
-  int mType;
+  TILE_TYPE mType;
 };
+
+
 
 // Initilize position and type of a tile
 void 
@@ -43,8 +64,10 @@ int wall_getType(struct wall* self)
   return self->mType;
 }
 
-// returns copy of the current box
-SDL_Rect wall_getBox(struct wall *self)
+// returns pointer to the box
+SDL_Rect* wall_getBox(struct wall *self)
 {
-  return self->mBox;
+  return &self->mBox;
 }
+
+

@@ -37,7 +37,8 @@
  *         rightA <= leftB then it's outside of B
  *         leftA >= rightB then it's outside of B
  */
-bool collision(const SDL_Rect* a, const SDL_Rect* b)
+bool 
+checkcollision(const SDL_Rect* a, const SDL_Rect* b)
 {
   // the sides of rectangle
   int leftA, leftB;
@@ -60,6 +61,54 @@ bool collision(const SDL_Rect* a, const SDL_Rect* b)
 
   // if None of the sides from A are outside B
   return true;
+}
+
+/*
+ * Check given region without caring
+ * about outside region of camera
+ *
+ * ---------------------------------------
+ *               Wall             |      |
+ * --------------------------------      |
+ * ------------                   |------|
+ * |          |                   |      |
+ * | Player   |                   |      |
+ * |          |                   |      |
+ * ------------                   |      |
+ *                                |      |
+ *                                |      |
+ *                                |------|
+ *---------------------------------      |
+ *                                |      |
+ *----------------------------------------
+ *
+ * Probe for all sides
+ *
+ * We know that Pixel in screen can found by
+ *  y * column + x 
+ */
+bool 
+touchesWall(const SDL_Rect* box, const SDL_Rect* camera, struct Wall *tiles[])
+{
+  int tileinXwindow, tileinYwindow;
+  int mCurIndex;
+
+  // total number tiles in X and Y dimensions 
+  // of the current window
+  tileinXwindow = (camera->x + camera->w) / TILE_WIDTH;
+  tileinYwindow = (camera->y + camera->h) / TILE_HEIGHT; 
+
+  // to access index of tile
+  // we do y * columns + x
+  mCurIndex = (camera->y / TILE_HEIGHT)*(LEVEL_WIDTH / TILE_WIDTH)+(camera->x / TILE_WIDTH);
+
+  for (mCurIndex; mCurIndex < tileinXwindow * tileinYwindow; mCurIndex)
+    for (mCurIndex; mCurIndex < mCurIndex+tileinXwindow; mCurIndex++)
+      if (checkCollision(&iplayer->mBox, &tiles[mCurIndex]))
+        return true;
+
+  return false;
+        
 }
 
 
