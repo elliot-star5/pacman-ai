@@ -6,16 +6,23 @@ struct vector
     int x, y;
 };
 
+int *playerWidth = &iplayer->playerTexture.mWidth;
+int *playerHeight = &iplayer->playerTexture.mHeight;
+
+// The player will move around on the 
+// screen
 struct Player
 {
     // player coordinates
     struct vector mCoordinate;
-
-
+    // Player Velocity
     struct vector mVelocity;
 
     // store players texture
     struct LTexture playerTexture;
+
+    // Collision box of the Player
+    SDL_Rect mBox;
 };
 
 
@@ -100,6 +107,7 @@ void playerhandleEvent(struct Player* iplayer, SDL_Event* e)
 // move the player
 void player_move(struct Player* iplayer)
 {
+
   iplayer->mCoordinate.x += iplayer->mVelocity.x;
   if (iplayer->mCoordinate.x < 0 || (iplayer->mCoordinate.x + iplayer->playerTexture.mWidth > lwindow_getWidth(&gWindow)))
   {
@@ -111,7 +119,33 @@ void player_move(struct Player* iplayer)
   {
     iplayer->mCoordinate.y -= iplayer->mVelocity.y;
   }
-
 }
+
+void playerSetCamera(struct Player* iplayer, SDL_Rect *camera)
+{
+  // Set the camera width and height to window
+  // dimensions
+  camera->w = lwindow_getWidth(&gWindow);
+  camera->h = lwindow_getHeight(&gHeight);
+
+  // Center the camera over the Player
+  camera->x = (iplayer->x + iplayer->playerTexture.mWidth / 2) -  camera->w / 2;
+  camera->y = (iplayer->y + iplayer->playerTexture.mHeight / 2) - camera->h / 2;
+  
+
+  // Keep the camera in bounds
+  if (camera->x < 0)
+    camera->x = 0;
+
+  if (camera->y < 0)
+    camera->y = 0;
+
+  if (camera->x > LEVEL_WIDTH - camera->w)
+    camera->x = LEVEL_WIDTH - camera->w;
+
+  if (camera->x > LEVEL_HEIGHT - camera->h)
+    camera->y = LEVEL_HEIGHT - camera->h;
+}
+
 
 #endif
