@@ -13,10 +13,11 @@
 #include <SDL_ttf.h>
 
 #include "global.h"
-#include "include/LWindow.h"        /* Window Events */
 
+#include "include/LWindow.h"        /* Window Events */
 #include "include/LTexture.h"       /* texture loading */
 #include "include/LTimer.h"         /* timer */
+#include "Wall.h"
 #include "Player.h"
 
 
@@ -88,7 +89,7 @@ checkcollision(const SDL_Rect* a, const SDL_Rect* b)
  *  y * column + x 
  */
 bool 
-touchesWall(const SDL_Rect* box, const SDL_Rect* camera, struct Wall *tiles[])
+touchesWall(const SDL_Rect* box, const SDL_Rect* camera, struct wall *tiles[])
 {
   int tileinXwindow, tileinYwindow;
   int mCurIndex;
@@ -104,13 +105,14 @@ touchesWall(const SDL_Rect* box, const SDL_Rect* camera, struct Wall *tiles[])
 
   for (mCurIndex; mCurIndex < tileinXwindow * tileinYwindow; mCurIndex)
     for (mCurIndex; mCurIndex < mCurIndex+tileinXwindow; mCurIndex++)
-      if (checkCollision(&iplayer->mBox, &tiles[mCurIndex]))
+    {
+      if (checkcollision(box, wall_getBox(tiles[mCurIndex])))
         return true;
+    }
 
   return false;
         
 }
-
 
 
 // initialize SDL 

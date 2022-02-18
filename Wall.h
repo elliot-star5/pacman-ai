@@ -26,7 +26,7 @@ struct wall
   SDL_Rect mBox;
 
   // the tile type
-  TILE_TYPE mType;
+  int mType;
 };
 
 
@@ -54,7 +54,7 @@ void wall_render(struct wall* self, struct LTexture *fTexture, SDL_Rect *camera)
   if (checkCollision(camera, &self->mBox))
   {
     // Show the tile
-    ltexture_render(fTexture, self->mBox.x - camera->x, self->mBox.y - camera->y, &self->gwallClips[self->mType], NULL, 0.0, NULL, SDL_FLIP_NONE);
+    ltexture_render(fTexture, self->mBox.x - camera->x, self->mBox.y - camera->y, &self->gwallClips[self->mType], 0.0, NULL, SDL_FLIP_NONE);
   }
 }
 
@@ -69,5 +69,4 @@ SDL_Rect* wall_getBox(struct wall *self)
 {
   return &self->mBox;
 }
-
 

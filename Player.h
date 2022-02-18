@@ -6,9 +6,6 @@ struct vector
     int x, y;
 };
 
-int *playerWidth = &iplayer->playerTexture.mWidth;
-int *playerHeight = &iplayer->playerTexture.mHeight;
-
 // The player will move around on the 
 // screen
 struct Player
@@ -126,11 +123,11 @@ void playerSetCamera(struct Player* iplayer, SDL_Rect *camera)
   // Set the camera width and height to window
   // dimensions
   camera->w = lwindow_getWidth(&gWindow);
-  camera->h = lwindow_getHeight(&gHeight);
+  camera->h = lwindow_getHeight(&gWindow);
 
   // Center the camera over the Player
-  camera->x = (iplayer->x + iplayer->playerTexture.mWidth / 2) -  camera->w / 2;
-  camera->y = (iplayer->y + iplayer->playerTexture.mHeight / 2) - camera->h / 2;
+  camera->x = (iplayer->mCoordinate.x + iplayer->playerTexture.mWidth / 2) -  camera->w / 2;
+  camera->y = (iplayer->mCoordinate.y + iplayer->playerTexture.mHeight / 2) - camera->h / 2;
   
 
   // Keep the camera in bounds
