@@ -71,7 +71,7 @@ map_t *generate_map(map_t *gMap)
          *    |
          *
          */
-        if (bottom == ' ' && front == ' ' && back == '|' && top == ' ')
+        if (bottom == ' ' && front == ' ' && (back == '|' || back == '-') && top == ' ')
         {
           copyMap->map_array[y * copyMap->cols + x] = 10;
         }
@@ -81,7 +81,7 @@ map_t *generate_map(map_t *gMap)
          *      &>|
          *        |
          */
-        else if (bottom == ' ' && front == '|' && back == ' ' && top == ' ')
+        else if (bottom == ' ' && (front == '|' || front == '-') && back == ' ' && top == ' ')
         {
           copyMap->map_array[y * copyMap->cols + x] = 6;
         }
@@ -157,7 +157,7 @@ map_t *generate_map(map_t *gMap)
       }
       else
       {
-          copyMap->map_array[y * copyMap->cols + x] = color_robin++;
+          copyMap->map_array[y * copyMap->cols + x] = color_robin;
       }
       color_robin++;
       color_robin %= 3;
@@ -252,9 +252,9 @@ int main(int argc, char* argv[])
   generated_map = generate_map(&cmap_array);
 
 
-  for (size_t y = 0; y < generated_map->rows; y++)
+  for (size_t y = 1; y < generated_map->rows-1; y++)
   {
-    for (size_t x = 0; x < generated_map->cols; x++)
+    for (size_t x = 1; x < generated_map->cols-1; x++)
       printf("%02d ", (int)generated_map->map_array[y * generated_map->cols + x]);
 
     putchar('\n');
