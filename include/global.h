@@ -14,14 +14,18 @@
 #define LEVEL_WIDTH 1280
 #define LEVEL_HEIGHT 960
 
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <stdio.h>
 
-extern TTF_Font *gFont;
-extern SDL_Renderer *gRenderer;
-extern struct LWindow gWindow;
-extern struct LTexture gSceneTexture;
+#include <assert.h>
 
-extern struct Player gPlayer;
-extern struct wall gWall;
+#include <ctype.h>
+#include <SDL.h>
+#include <SDL_image.h>
+
 
 
 #endif

@@ -2,6 +2,8 @@
 
 #define __LTimer_H_
 
+#include "global.h"
+
 // Defination for initializing LTimer struct
 #define _LTimer \
   { \

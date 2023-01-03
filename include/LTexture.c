@@ -1,6 +1,6 @@
-#include "LTexture.c"
+#include "LTexture.h"
 
-bool ltexture_loadTextureFromFile(struct LTexture *self, char *path)
+bool ltexture_loadTextureFromFile(struct LTexture *self, struct MainWindow* window, char *path)
 {
 	//Get rid of preexisting texture
 	ltexture_free(self);
@@ -17,7 +17,7 @@ bool ltexture_loadTextureFromFile(struct LTexture *self, char *path)
 	else
 	{
         // Convert surface to display format
-        SDL_Surface *formattedSurface = SDL_ConvertSurfaceFormat(loadedSurface, SDL_GetWindowPixelFormat(lwindow_data(&gWindow)), 0);
+        SDL_Surface *formattedSurface = SDL_ConvertSurfaceFormat(loadedSurface, SDL_GetWindowPixelFormat(window->gWindow), 0);
         if (formattedSurface == NULL)
         {
           printf("Unable to convert loaded surface to display format! SDL Error: %s\n", SDL_GetError());
@@ -25,7 +25,7 @@ bool ltexture_loadTextureFromFile(struct LTexture *self, char *path)
         else
         {
           // Create blank streamable texture
-          newTexture = SDL_CreateTexture(gRenderer, SDL_GetWindowPixelFormat(lwindow_data(&gWindow)), SDL_TEXTUREACCESS_STREAMING, formattedSurface->w, formattedSurface->h);
+          newTexture = SDL_CreateTexture(window->gRenderer, SDL_GetWindowPixelFormat(window->gWindow), SDL_TEXTUREACCESS_STREAMING, formattedSurface->w, formattedSurface->h);
           if (newTexture == NULL)
           {
 
@@ -61,6 +61,7 @@ bool ltexture_loadTextureFromFile(struct LTexture *self, char *path)
 
 
 
+/*
 
 bool ltexture_loadFromRenderedText(struct LTexture *self, char *textureText, SDL_Color textColor)
 {
@@ -96,6 +97,7 @@ bool ltexture_loadFromRenderedText(struct LTexture *self, char *textureText, SDL
   // Return surface
   return self->mTexture != NULL;
 }
+*/
 
 
 void ltexture_free(struct LTexture *self)
@@ -134,7 +136,7 @@ void ltexture_setAlpha(struct LTexture *self, Uint8 alpha)
 
 
 
-bool ltexture_render(struct LTexture *self, int x, int y, SDL_Rect* clip, double angle, SDL_Point *center, SDL_RendererFlip flip)
+bool ltexture_render(struct LTexture *self, struct MainWindow *window, int x, int y, SDL_Rect* clip, double angle, SDL_Point *center, SDL_RendererFlip flip)
 {
   // Set rendering space and render to screen
   SDL_Rect renderQuad = { x, y, self->mWidth, self->mHeight };
@@ -147,7 +149,7 @@ bool ltexture_render(struct LTexture *self, int x, int y, SDL_Rect* clip, double
   }
 
   // Render to screen
-  SDL_RenderCopyEx(gRenderer, self->mTexture, clip, &renderQuad, angle, center, flip);
+  SDL_RenderCopyEx(window->gRenderer, self->mTexture, clip, &renderQuad, angle, center, flip);
 }
 
 
@@ -218,16 +220,20 @@ int ltexture_getPitch(struct LTexture *self)
 }
 
 
-void ltexture_setColorKey(struct LTexture *self, Uint8 red, Uint8 green, Uint8 blue)
+void ltexture_setColorKey(struct LTexture *self, struct MainWindow* window, Uint8 red, Uint8 green, Uint8 blue)
 {
-  if (!ltexture_lockTexture(self))
-  {
-    printf("Unable to lock gSceneTexture!\n");
-  }
+	if (!ltexture_lockTexture(self))
+	{
+		printf("Unable to lock gSceneTexture!\n");
+	}
   else
   {
+
+	  /*
+	int lwindow_data(struct MainWindow* window) = NULL;
+
     //Allocate format from window
-    Uint32 format = SDL_GetWindowPixelFormat( lwindow_data(&gWindow));
+    Uint32 format = SDL_GetWindowPixelFormat( lwindow_data(&window->gWindow));
     SDL_PixelFormat* mappingFormat = SDL_AllocFormat( format );
 
     //Get pixel data
@@ -252,5 +258,6 @@ void ltexture_setColorKey(struct LTexture *self, Uint8 red, Uint8 green, Uint8 b
 
     //Free format
     SDL_FreeFormat( mappingFormat );
+    */
   }
 }

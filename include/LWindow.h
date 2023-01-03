@@ -2,6 +2,8 @@
 #ifndef __LWindow_H_
 #define __LWindow_H_
 
+#include "global.h"
+
 // Window initialization defination
 #define _LWindow {            \
   .mWindow = NULL,            \

@@ -1,6 +1,8 @@
 #ifndef __LTexture_H_
 #define __LTexture_H_
 
+#include "global.h"
+#include "../MainWindow.h"
 
 /* 
 texture loading 
@@ -27,7 +29,7 @@ struct LTexture
         
    */
 
-bool ltexture_loadTextureFromFile(struct LTexture *, char *);
+bool ltexture_loadTextureFromFile(struct LTexture *, struct MainWindow*, char *);
 
 
 /*
@@ -59,7 +61,7 @@ void ltexture_setAlpha(struct LTexture *, Uint8);
    draw texture from image
    on buffer
    */
-bool ltexture_render(struct LTexture *, int, int, SDL_Rect *, double, SDL_Point *, SDL_RendererFlip);
+bool ltexture_render(struct LTexture *, struct MainWindow *, int, int, SDL_Rect *, double, SDL_Point *, SDL_RendererFlip);
 
 /*
    frees texture
@@ -81,6 +83,6 @@ void* ltexture_getPixels(struct LTexture *);
 int ltexture_getPitch(struct LTexture *);
 
 // Set colorkey from loadedpixels
-void ltexture_setColorKey(struct LTexture *, Uint8, Uint8, Uint8);
+void ltexture_setColorKey(struct LTexture *, struct MainWindow*, Uint8, Uint8, Uint8);
 
 #endif

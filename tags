@@ -1,0 +1,169 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/vicktor/Documents/pacman-ai/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+ASCII_COLS	map.c	/^#define ASCII_COLS /;"	d	file:
+ASCII_MAP	map.c	/^#define ASCII_MAP /;"	d	file:
+ASCII_ROWS	map.c	/^#define ASCII_ROWS /;"	d	file:
+AUTHOR	map.c	/^#define AUTHOR /;"	d	file:
+Edge	algorithm/graph.h	/^struct Edge$/;"	s
+GAME_NAME	include/global.h	/^#define GAME_NAME /;"	d
+Graph	algorithm/graph.h	/^} Graph;$/;"	t	typeref:struct:__anon2603f1a30108
+LEVEL_HEIGHT	include/global.h	/^#define LEVEL_HEIGHT /;"	d
+LEVEL_WIDTH	include/global.h	/^#define LEVEL_WIDTH /;"	d
+LTexture	include/LTexture.h	/^struct LTexture$/;"	s
+LTimer	include/LTimer.h	/^struct LTimer$/;"	s
+LWindow	include/LWindow.h	/^struct LWindow$/;"	s
+MainWindow	MainWindow.h	/^struct MainWindow {$/;"	s
+Player	Player.h	/^struct Player$/;"	s
+SCENE_1	Scene1.h	/^#define SCENE_1 /;"	d
+SCREEN_FPS	include/global.h	/^#define SCREEN_FPS /;"	d
+SCREEN_HEIGHT	include/global.h	/^#define SCREEN_HEIGHT /;"	d
+SCREEN_WIDTH	include/global.h	/^#define SCREEN_WIDTH /;"	d
+TILE_BLUE	Wall.h	/^  TILE_BLUE,$/;"	e	enum:__anond9e8270b0103
+TILE_BOTTOM	Wall.h	/^  TILE_BOTTOM,$/;"	e	enum:__anond9e8270b0103
+TILE_BOTTOMLEFT	Wall.h	/^  TILE_BOTTOMLEFT,$/;"	e	enum:__anond9e8270b0103
+TILE_BOTTOMRIGHT	Wall.h	/^  TILE_BOTTOMRIGHT,$/;"	e	enum:__anond9e8270b0103
+TILE_CENTER	Wall.h	/^  TILE_CENTER,$/;"	e	enum:__anond9e8270b0103
+TILE_GREEN	Wall.h	/^  TILE_GREEN,$/;"	e	enum:__anond9e8270b0103
+TILE_HEIGHT	Wall.h	/^#define TILE_HEIGHT /;"	d
+TILE_LEFT	Wall.h	/^  TILE_LEFT,$/;"	e	enum:__anond9e8270b0103
+TILE_RED	Wall.h	/^  TILE_RED,$/;"	e	enum:__anond9e8270b0103
+TILE_RIGHT	Wall.h	/^  TILE_RIGHT,$/;"	e	enum:__anond9e8270b0103
+TILE_TOP	Wall.h	/^  TILE_TOP,$/;"	e	enum:__anond9e8270b0103
+TILE_TOPLEFT	Wall.h	/^  TILE_TOPLEFT$/;"	e	enum:__anond9e8270b0103
+TILE_TOPRIGHT	Wall.h	/^  TILE_TOPRIGHT,$/;"	e	enum:__anond9e8270b0103
+TILE_TYPE	Wall.h	/^} TILE_TYPE;$/;"	v	typeref:enum:__anond9e8270b0103
+TILE_WIDTH	Wall.h	/^#define TILE_WIDTH /;"	d
+TOTAL_TILES	Wall.h	/^#define TOTAL_TILES /;"	d
+TOTAL_TILE_SPRITES	Wall.h	/^#define TOTAL_TILE_SPRITES /;"	d
+WindowScene	WindowScene.h	/^struct WindowScene $/;"	s
+_LTimer	include/LTimer.h	/^#define _LTimer /;"	d
+_LWindow	include/LWindow.h	/^#define _LWindow /;"	d
+_MAIN_WINDOW_H_	MainWindow.h	/^#define _MAIN_WINDOW_H_ /;"	d
+_WALL_H_	Wall.h	/^#define _WALL_H_ /;"	d
+_WINDOW_SCENE_H_	WindowScene.h	/^#define _WINDOW_SCENE_H_ /;"	d
+__GLOBAL_H_	include/global.h	/^#define __GLOBAL_H_$/;"	d
+__LTexture_H_	include/LTexture.h	/^#define __LTexture_H_$/;"	d
+__LTimer_H_	include/LTimer.h	/^#define __LTimer_H_$/;"	d
+__LWindow_H_	include/LWindow.h	/^#define __LWindow_H_$/;"	d
+__PLAYER_H	Player.h	/^#define __PLAYER_H$/;"	d
+__anon0fea82940208	map.c	/^typedef struct {$/;"	s	file:
+__anon2603f1a30108	algorithm/graph.h	/^typedef struct {$/;"	s
+__anond9e8270b0103	Wall.h	/^enum {$/;"	g
+addEdge	algorithm/graph.h	/^addEdge(Graph* graph, struct Edge *edge)$/;"	f	typeref:typename:void
+all	Makefile	/^all:$/;"	t
+clean	Makefile	/^clean:$/;"	t
+cols	map.c	/^  size_t cols;          \/\/ number of columns in map$/;"	m	struct:__anon0fea82940208	typeref:typename:size_t	file:
+createGraph	algorithm/graph.h	/^Graph* createGraph(size_t size)$/;"	f	typeref:typename:Graph *
+createNode	algorithm/graph.h	/^createNode(void)$/;"	f	typeref:struct:node *
+debug	Makefile	/^debug:$/;"	t
+dest	algorithm/graph.h	/^  int dest;$/;"	m	struct:node	typeref:typename:int
+dest	algorithm/graph.h	/^  int src, dest;$/;"	m	struct:Edge	typeref:typename:int
+errExit	algorithm/graph.h	/^#define errExit(/;"	d
+errExit	map.c	/^#define errExit(/;"	d	file:
+freeGraph	algorithm/graph.h	/^freeGraph(Graph* graph)$/;"	f	typeref:typename:void
+freeScene	WindowScene.h	/^	void (*freeScene)(struct WindowScene*);$/;"	m	struct:WindowScene	typeref:typename:void (*)(struct WindowScene *)
+gRenderer	MainWindow.h	/^	SDL_Renderer* gRenderer;$/;"	m	struct:MainWindow	typeref:typename:SDL_Renderer *
+gWindow	MainWindow.h	/^	SDL_Window* gWindow;$/;"	m	struct:MainWindow	typeref:typename:SDL_Window *
+generate_map	map.c	/^map_t *generate_map(map_t *gMap)$/;"	f	typeref:typename:map_t *
+graph_head	algorithm/graph.h	/^  struct node** graph_head;     \/\/ head of graph$/;"	m	struct:__anon2603f1a30108	typeref:struct:node **
+handleEvent	WindowScene.h	/^	void (*handleEvent)(struct WindowScene*, struct MainWindow*);$/;"	m	struct:WindowScene	typeref:typename:void (*)(struct WindowScene *,struct MainWindow *)
+init	pacman-ai.c	/^bool init(struct MainWindow* self)$/;"	f	typeref:typename:bool
+initScene	WindowScene.h	/^	void (*initScene)(struct WindowScene*, struct MainWindow*);$/;"	m	struct:WindowScene	typeref:typename:void (*)(struct WindowScene *,struct MainWindow *)
+init_graph_edges	algorithm/graph.h	/^init_graph_edges(Graph* graph, struct Edge edges[], unsigned size)$/;"	f	typeref:typename:void
+init_tile	Wall.c	/^init_tile(struct wall *self, int x, int y, int tileType)$/;"	f	typeref:typename:void
+inputFromFile	map.c	/^void inputFromFile(char *filename, map_t *cmap_array)$/;"	f	typeref:typename:void
+ltexture_free	include/LTexture.c	/^void ltexture_free(struct LTexture *self)$/;"	f	typeref:typename:void
+ltexture_getHeight	include/LTexture.c	/^int ltexture_getHeight(struct LTexture *self)$/;"	f	typeref:typename:int
+ltexture_getPitch	include/LTexture.c	/^int ltexture_getPitch(struct LTexture *self)$/;"	f	typeref:typename:int
+ltexture_getPixels	include/LTexture.c	/^void* ltexture_getPixels(struct LTexture *self)$/;"	f	typeref:typename:void *
+ltexture_getWidth	include/LTexture.c	/^int ltexture_getWidth(struct LTexture *self)$/;"	f	typeref:typename:int
+ltexture_loadTextureFromFile	include/LTexture.c	/^bool ltexture_loadTextureFromFile(struct LTexture *self, struct MainWindow* window, char *path)$/;"	f	typeref:typename:bool
+ltexture_lockTexture	include/LTexture.c	/^bool ltexture_lockTexture(struct LTexture *self)$/;"	f	typeref:typename:bool
+ltexture_render	include/LTexture.c	/^bool ltexture_render(struct LTexture *self, struct MainWindow *window, int x, int y, SDL_Rect* c/;"	f	typeref:typename:bool
+ltexture_setAlpha	include/LTexture.c	/^void ltexture_setAlpha(struct LTexture *self, Uint8 alpha)$/;"	f	typeref:typename:void
+ltexture_setBlendMode	include/LTexture.c	/^void ltexture_setBlendMode(struct LTexture *self, SDL_BlendMode blending)$/;"	f	typeref:typename:void
+ltexture_setColor	include/LTexture.c	/^void ltexture_setColor(struct LTexture *self, Uint8 red, Uint8 green, Uint8 blue)$/;"	f	typeref:typename:void
+ltexture_setColorKey	include/LTexture.c	/^void ltexture_setColorKey(struct LTexture *self, struct MainWindow* window, Uint8 red, Uint8 gre/;"	f	typeref:typename:void
+ltexture_unlockTexture	include/LTexture.c	/^bool ltexture_unlockTexture(struct LTexture *self)$/;"	f	typeref:typename:bool
+ltimer_getTicks	include/LTimer.c	/^Uint32 ltimer_getTicks(struct LTimer *self)$/;"	f	typeref:typename:Uint32
+ltimer_isPaused	include/LTimer.c	/^bool ltimer_isPaused(struct LTimer *self)$/;"	f	typeref:typename:bool
+ltimer_isStarted	include/LTimer.c	/^bool ltimer_isStarted(struct LTimer *self)$/;"	f	typeref:typename:bool
+ltimer_pause	include/LTimer.c	/^void ltimer_pause(struct LTimer *self)$/;"	f	typeref:typename:void
+ltimer_start	include/LTimer.c	/^void ltimer_start(struct LTimer *self)$/;"	f	typeref:typename:void
+ltimer_stop	include/LTimer.c	/^void ltimer_stop(struct LTimer *self)$/;"	f	typeref:typename:void
+ltimer_unpause	include/LTimer.c	/^void ltimer_unpause(struct LTimer *self)$/;"	f	typeref:typename:void
+lwindow_createRenderer	include/LWindow.c	/^SDL_Renderer *lwindow_createRenderer(struct LWindow *self)$/;"	f	typeref:typename:SDL_Renderer *
+lwindow_data	include/LWindow.c	/^SDL_Window *lwindow_data(struct LWindow *self)$/;"	f	typeref:typename:SDL_Window *
+lwindow_free	include/LWindow.c	/^void lwindow_free(struct LWindow *self)$/;"	f	typeref:typename:void
+lwindow_getHeight	include/LWindow.c	/^int lwindow_getHeight(struct LWindow *self)$/;"	f	typeref:typename:int
+lwindow_getWidth	include/LWindow.c	/^int lwindow_getWidth(struct LWindow *self)$/;"	f	typeref:typename:int
+lwindow_handleEvent	include/LWindow.c	/^void lwindow_handleEvent(struct LWindow *self, SDL_Event *e)$/;"	f	typeref:typename:void
+lwindow_hasKeyboardFocus	include/LWindow.c	/^bool lwindow_hasKeyboardFocus(struct LWindow *self)$/;"	f	typeref:typename:bool
+lwindow_hasMouseFocus	include/LWindow.c	/^bool lwindow_hasMouseFocus(struct LWindow *self)$/;"	f	typeref:typename:bool
+lwindow_init	include/LWindow.c	/^bool lwindow_init(struct LWindow *self)$/;"	f	typeref:typename:bool
+lwindow_isMinimized	include/LWindow.c	/^bool lwindow_isMinimized(struct LWindow *self)$/;"	f	typeref:typename:bool
+mBox	Player.h	/^    SDL_Rect mBox;$/;"	m	struct:Player	typeref:typename:SDL_Rect
+mBox	Wall.h	/^  SDL_Rect mBox;$/;"	m	struct:wall	typeref:typename:SDL_Rect
+mCoordinate	Player.h	/^    struct vector mCoordinate;$/;"	m	struct:Player	typeref:struct:vector
+mFullScreen	include/LWindow.h	/^  bool mFullScreen;$/;"	m	struct:LWindow	typeref:typename:bool
+mHeight	include/LTexture.h	/^  int mHeight;$/;"	m	struct:LTexture	typeref:typename:int
+mHeight	include/LWindow.h	/^  int mHeight;$/;"	m	struct:LWindow	typeref:typename:int
+mKeyboardFocus	include/LWindow.h	/^  bool mKeyboardFocus;$/;"	m	struct:LWindow	typeref:typename:bool
+mMinimized	include/LWindow.h	/^  bool mMinimized;$/;"	m	struct:LWindow	typeref:typename:bool
+mMouseFocus	include/LWindow.h	/^  bool mMouseFocus;$/;"	m	struct:LWindow	typeref:typename:bool
+mPaused	include/LTimer.h	/^  bool mPaused;$/;"	m	struct:LTimer	typeref:typename:bool
+mPausedTicks	include/LTimer.h	/^  Uint32 mPausedTicks;$/;"	m	struct:LTimer	typeref:typename:Uint32
+mPitch	include/LTexture.h	/^  int mPitch;$/;"	m	struct:LTexture	typeref:typename:int
+mPixels	include/LTexture.h	/^  void *mPixels;$/;"	m	struct:LTexture	typeref:typename:void *
+mStartTicks	include/LTimer.h	/^  Uint32 mStartTicks;$/;"	m	struct:LTimer	typeref:typename:Uint32
+mStarted	include/LTimer.h	/^  bool mStarted;$/;"	m	struct:LTimer	typeref:typename:bool
+mTexture	include/LTexture.h	/^  SDL_Texture* mTexture;$/;"	m	struct:LTexture	typeref:typename:SDL_Texture *
+mType	Wall.h	/^  int mType;$/;"	m	struct:wall	typeref:typename:int
+mVelocity	Player.h	/^    struct vector mVelocity;$/;"	m	struct:Player	typeref:struct:vector
+mWidth	include/LTexture.h	/^  int mWidth;$/;"	m	struct:LTexture	typeref:typename:int
+mWidth	include/LWindow.h	/^  int mWidth;$/;"	m	struct:LWindow	typeref:typename:int
+mWindow	include/LWindow.h	/^  SDL_Window *mWindow;$/;"	m	struct:LWindow	typeref:typename:SDL_Window *
+main	pacman-ai.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+map_array	map.c	/^  char *map_array;      \/\/ map array$/;"	m	struct:__anon0fea82940208	typeref:typename:char *	file:
+map_t	map.c	/^} map_t;$/;"	t	typeref:struct:__anon0fea82940208	file:
+next	algorithm/graph.h	/^  struct node *next;$/;"	m	struct:node	typeref:struct:node *
+node	algorithm/graph.h	/^struct node$/;"	s
+pacman-ai	README.md	/^# pacman-ai $/;"	c
+pacmanImage	Scene1.h	/^	struct LTexture pacmanImage;$/;"	m	struct:scene1	typeref:struct:LTexture
+playerSetCamera	Player.c	/^void playerSetCamera(struct Player* iplayer, SDL_Rect *camera)$/;"	f	typeref:typename:void
+playerTexture	Player.h	/^    struct LTexture playerTexture;$/;"	m	struct:Player	typeref:struct:LTexture
+player_freeTexture	Player.c	/^void player_freeTexture(struct Player *iplayer)$/;"	f	typeref:typename:void
+player_loadTexture	Player.c	/^bool player_loadTexture(struct Player *iplayer, char *path)$/;"	f	typeref:typename:bool
+player_move	Player.c	/^void player_move(struct Player* iplayer)$/;"	f	typeref:typename:void
+player_render	Player.c	/^void player_render(struct Player* iplayer)$/;"	f	typeref:typename:void
+player_setColorKey	Player.c	/^void player_setColorKey(struct Player* iplayer, Uint8 red, Uint8 green, Uint8 blue)$/;"	f	typeref:typename:void
+player_setPosition	Player.c	/^void player_setPosition(struct Player* iplayer, struct vector *ivect)$/;"	f	typeref:typename:void
+playerhandleEvent	Player.c	/^void playerhandleEvent(struct Player* iplayer, SDL_Event* e)$/;"	f	typeref:typename:void
+private_ptr	WindowScene.h	/^	void *private_ptr;				\/\/ a private pointer that stores memory$/;"	m	struct:WindowScene	typeref:typename:void *
+render	WindowScene.h	/^	void (*render)(struct WindowScene*, struct MainWindow*);$/;"	m	struct:WindowScene	typeref:typename:void (*)(struct WindowScene *,struct MainWindow *)
+rows	map.c	/^  size_t rows;          \/\/ number of rows in map$/;"	m	struct:__anon0fea82940208	typeref:typename:size_t	file:
+runMainLoop	MainWindow.c	/^void runMainLoop(struct MainWindow *self) {$/;"	f	typeref:typename:void
+scene1	Scene1.h	/^struct scene1 {$/;"	s
+scene1_freeScene	Scene1.c	/^void scene1_freeScene(struct WindowScene* self)$/;"	f	typeref:typename:void
+scene1_handleEvent	Scene1.c	/^void scene1_handleEvent(struct WindowScene* self, struct MainWindow*)$/;"	f	typeref:typename:void
+scene1_init	Scene1.c	/^void scene1_init(struct WindowScene* self, struct MainWindow* window)$/;"	f	typeref:typename:void
+scene1_render	Scene1.c	/^void scene1_render(struct WindowScene* self, struct MainWindow* window)$/;"	f	typeref:typename:void
+src	algorithm/graph.h	/^  int src, dest;$/;"	m	struct:Edge	typeref:typename:int
+vector	Player.h	/^struct vector$/;"	s
+vertices	algorithm/graph.h	/^  size_t vertices;$/;"	m	struct:__anon2603f1a30108	typeref:typename:size_t
+wall	Wall.h	/^struct wall$/;"	s
+wall_getBox	Wall.c	/^SDL_Rect* wall_getBox(struct wall *self)$/;"	f	typeref:typename:SDL_Rect *
+wall_getType	Wall.c	/^int wall_getType(struct wall* self)$/;"	f	typeref:typename:int
+wall_render	Wall.c	/^void wall_render(struct wall* self, struct LTexture *fTexture, SDL_Rect *camera)$/;"	f	typeref:typename:void
+x	Player.h	/^    int x, y;$/;"	m	struct:vector	typeref:typename:int
+xclose	pacman-ai.c	/^void xclose(struct MainWindow* self) $/;"	f	typeref:typename:void
+y	Player.h	/^    int x, y;$/;"	m	struct:vector	typeref:typename:int
